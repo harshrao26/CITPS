@@ -1,26 +1,195 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-super-black: #000000;
+  --color-black: #231F20;
+  --color-one: #FF3B3B;
+  --color-two: #3A74B8;
+  --color-three: #FCFAEB;
+  --color-white: #ffffff;
+  --color-grey: #ececec;
+  --color-pureGrey: #808080;
+  --font-main: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --color-bms-black: #231F20;
+  --color-bms-red: #FF3B3B;
+  --color-bms-blue: #3A74B8;
+  --color-bms-cream: #FCFAEB;
+  --color-bms-grey: #ececec;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat), "Montserrat", ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background: #ffffff;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #ffffff;
+    color: #231F20;
+    font-family: var(--font-montserrat), "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #333333;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* BMSIT Standard Buttons */
+.btn-one,
+.btn-one-full,
+.btn-two,
+.btn-two-full,
+.btn-three,
+.btn-three-full,
+.btn-four,
+.btn-four-full {
+  transition: all 0.3s ease-in-out;
+  padding: 6px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.btn-one {
+  border: 2px solid #FF3B3B;
+  color: #FF3B3B !important;
+  background: transparent;
+}
+.btn-one:hover {
+  background: #FF3B3B;
+  color: #ffffff !important;
+}
+
+.btn-one-full {
+  border: 2px solid #FF3B3B;
+  color: #ffffff !important;
+  background: #FF3B3B;
+}
+.btn-one-full:hover {
+  background: transparent;
+  color: #FF3B3B !important;
+}
+
+.btn-two {
+  border: 2px solid #3A74B8;
+  color: #3A74B8 !important;
+  background: transparent;
+}
+.btn-two:hover {
+  background: #3A74B8;
+  color: #ffffff !important;
+}
+
+.btn-two-full {
+  border: 2px solid #3A74B8;
+  background: #3A74B8;
+  color: #ffffff !important;
+}
+.btn-two-full:hover {
+  border: 2px solid #3A74B8;
+  color: #3A74B8 !important;
+  background: transparent;
+}
+
+.btn-three {
+  border: 2px solid #231F20;
+  color: #231F20 !important;
+  background: transparent;
+}
+.btn-three:hover {
+  background: #231F20;
+  color: #ffffff !important;
+}
+
+.btn-three-full {
+  border: 2px solid #231F20;
+  background: #231F20;
+  color: #ffffff !important;
+}
+.btn-three-full:hover {
+  border: 2px solid #231F20;
+  color: #231F20 !important;
+  background: transparent;
+}
+
+.btn-four {
+  border: 2px solid #ffffff;
+  color: #ffffff !important;
+  background: transparent;
+}
+.btn-four:hover {
+  background: #ffffff;
+  color: #231F20 !important;
+}
+
+.btn-four-full {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  color: #231F20 !important;
+}
+.btn-four-full:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff !important;
+  background: transparent;
+}
+
+/* Glassmorphism Card Style used across BMSIT */
+.bms-glass-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px 0 rgba(58, 116, 184, 0.25);
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes tickerMarquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: tickerMarquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes logoMarquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-logo-marquee {
+  display: flex;
+  width: max-content;
+  animation: logoMarquee 25s linear infinite;
+}
+
+.animate-logo-marquee:hover {
+  animation-play-state: paused;
 }
