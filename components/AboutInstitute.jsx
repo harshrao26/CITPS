@@ -42,11 +42,12 @@ export default function AboutInstitute() {
           <div className="relative lg:col-span-5">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] shadow-xl border border-[#ececec]">
               <Image
-                src="/images/campus.jpg"
-                alt="CITPS Campus main building"
+                src="/images/citps-campus-about.jpg"
+                alt="CITPS Academic & Clinical Campus Grounds"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
+                priority
               />
             </div>
           </div>
